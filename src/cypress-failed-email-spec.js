@@ -8,9 +8,9 @@ describe('cypress-failed-email', () => {
   const {formEmail} = require('.')
 
   const failed = {
-    title: "title",
-    testName: "suite title",
-    testError: "a test fails",
+    title: 'title',
+    testName: 'suite title',
+    testError: 'a test fails',
     testCommands: [
       'visit /',
       'fails 100%'
