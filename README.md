@@ -8,6 +8,28 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
+If you run [Cypress.io](https://www.cypress.io/) to check your front end,
+and collect failing test information using
+[cypress-failed-log](https://github.com/bahmutov/cypress-failed-log), you can
+send beautiful and helpful emails on individual test failures.
+
+## Use
+
+```sh
+npm i -D cypress-failed-email
+```
+
+Then from your test failure code
+
+```js
+const {formEmail} = require('cypress-failed-email')
+const filename = process.argv[2]
+//> failed-test.json for example
+const failed = require(filename)
+const email = formEmail(failed)
+//> email is object with text fields {subject, plainText}
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
@@ -16,7 +38,6 @@ Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
 * [blog](http://glebbahmutov.com/blog)
-
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
